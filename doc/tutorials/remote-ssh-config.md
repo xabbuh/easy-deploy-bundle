@@ -12,7 +12,7 @@ Connection Refused
 
 Check the `MaxSessions` and `MaxStartups` config options of the SSH server.
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
@@ -23,7 +23,7 @@ Check the `MaxSessions` and `MaxStartups` config options of the SSH server.
 MaxStartups 10:30:100
 
 # Defines the maximum number of open shell, login or subsystem (e.g. sftp)
-# sessions permitted per connection. This mostly affects to users with
+# sessions permitted per connection. This mostly affects users with
 # multiplexing connections.
 MaxSessions 10
 ```
@@ -40,7 +40,7 @@ Connecting to remote SSH servers with usernames and passwords is discouraged in
 favor of encryption keys. However, if you are still using passwords, make sure
 that servers allow to connect to them using passwords:
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
@@ -53,7 +53,7 @@ Login (and deploying) as the `root` user is a bad security practice. That's why
 most servers disable root logins. If you still want to connect as `root`, you
 must define the `PermitRootLogin` option:
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
@@ -67,11 +67,11 @@ PermitRootLogin yes
 SSH servers can define a list of allowed/denied users and groups. Check that
 the user connecting to the server is allowed or at least not denied:
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
-# these four options are processed in the following order and the accept both
+# these four options are processed in the following order and they accept both
 # full user/group names and patterns
 DenyUsers ...
 AllowUsers ...
@@ -86,7 +86,7 @@ Connection is Slow
 
 Disable the option that makes the remote SSH server to resolve host names.
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
@@ -113,7 +113,7 @@ it's not enough to enable this option in your local SSH config file or in the
 
 Check that the `AllowAgentForwarding` option in the server is set to `yes`.
 
-```ini
+```
 # /etc/ssh/sshd_config
 # ...
 
